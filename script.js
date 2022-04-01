@@ -1,15 +1,14 @@
 import http from "k6/http";
 import { check, sleep } from "k6";
 
-const BASE_URL = "https://gw.wisse-ict.com:9443/wisse-ict/sandbox/shopapi";
+const BASE_URL = "https://204.168.225.149:9443/wisse-ict/sandbox/shopapi/graphql";
 
 export let options = {
   stages: [
      { duration: "3s", target: 1 },
      { duration: "3s", target: 10 },
      { duration: "5s", target: 100 },
-     { duration: "10s", target: 1000 },
-     { duration: "20s", target: 10000 },
+     { duration: "10s", target: 1000 }
    ]
  };
 
