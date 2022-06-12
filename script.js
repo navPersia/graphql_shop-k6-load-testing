@@ -1,21 +1,23 @@
 import http from "k6/http";
 import { check, sleep } from "k6";
 
-const BASE_URL = "https://204.168.225.149:9443/wisse-ict/sandbox/shopapi/graphql";
+const BASE_URL = "https://10.151.19.83:6443/id-org/sandbox/shopapi/graphql";
 
 export let options = {
-  stages: [
-     { duration: "3s", target: 1 },
-     { duration: "3s", target: 10 },
-     { duration: "5s", target: 100 },
-     { duration: "10s", target: 1000 }
-   ]
+  // stages: [
+  //   { duration: "60s", target: 180 },
+  //   { duration: "60s", target: 190 },
+  //   { duration: "60s", target: 200 },
+  //   { duration: "60s", target: 210 },
+  //   { duration: "60s", target: 220 },
+  //  ]
+  vus: 190,
+  duration: "60s"
  };
 
-// export function setup() {
-//   // setup code
-//   return {}
-// }
+
+ 
+
 
 export default function() {
   let query = `
@@ -51,6 +53,3 @@ export default function() {
   });
 }
 
-// export function teardown(data) {
-//     // teardown code
-// }
